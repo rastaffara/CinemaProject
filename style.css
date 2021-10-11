@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box; /*Когда box-sizing включен – ширина width /высота height является шириной всего блока.
+  Вместо вычисления ширины, включающей отступы и границы, свойство box-sizing в сочетании с border-box использует собственную ширину в качестве общей ширины блока:
+  .sidebar {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #DDD;
+  }
+  Теперь любые отступы или границы не будут добавлены к общей ширине. Вместо этого, они будут автоматически вычитаться из предоставленного пространства.*/
+}
+body {
+  background-color: #621402; /*цвет фона страницы*/
+  font-family: "Roboto", sans-serif; /*задаем для всей страницы шрифт импортированный из Google*/
+  color: #fff; /*цвет текста на всей странице*/
+}
+.container {
+  /*общий класс для всех контейнеров - одинаковое форматирование*/
+  max-width: 1170px; /*задаем ширину элемента (здесь - блока меню)*/
+  margin: auto; /*горизонтальное выравнивание по центру*/
+}
+.header {
+  min-height: 100vh; /*минимальная высота в 1 экран, чтобы картинка была не только в области заголовка*/
+  background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
+    /*градиентная заливка*/ url("/img/bg.jpg") no-repeat center top / cover; /*отключили мозаику, если картинка маленькая; выровняли вверх по центру; растянули на весь экран*/
+}
+.navbar {
+  display: flex; /*горизонтальное расположение элементов заголовка*/
+  align-items: center; /*выравнивание элементов по вертикали относительно центральной линии*/
+  padding-top: 30px; /*отступ перед заголовком (сверху)*/
+  padding-bottom: 30px; /*отступ после заголовка (снизу)*/
+}
+.menu {
+  list-style: none; /*убираем точки у элементов меню*/
+  display: flex; /*вертикальный список в горизонтальный*/
+  margin: 0; /*убираем отступы сверху/снизу у строки меню*/
+  margin-left: 17px; /*отступ у меню слева (от Logo)*/
+}
+.menu-item {
+  margin-right: 25px; /*отступ у элементов меню справа*/
+}
+.menu-link {
+  color: white; /*цвет элементов меню*/
+  text-decoration: none; /*убираем подчеркивание текста*/
+}
+.user {
+  margin-left: auto; /*переносим блок в право*/
+  color: white; /*цвет текста*/
+
+  /*выравниваем текст по центр автарки*/
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%; /*закругление аватарки*/
+  margin-left: 11px; /*отступ слева от аватара*/
+}
+.film {
+  margin-top: 60px;
+  color: #fff;
+}
+.film-titel-small {
+  opacity: 0.5; /*прозрачность*/
+  font-size: 24px; /*размер шрифта*/
+  line-height: 150%; /*высота строки*/
+}
+.film-titel {
+  font-size: 36px;
+  line-height: 42px;
+  margin-top: 11px;
+  margin-bottom: 23px;
+}
+.film-description {
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 570px; /*максимальная ширина*/
+}
+.film {
+  display: flex;
+  align-items: center;
+}
+.film-trailer {
+  margin: auto; /*автоматическое выравнивание по центру*/
+}
+.film-details {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+.time {
+  display: flex;
+  align-items: center;
+}
+.time-icon {
+  margin-right: 14px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  margin-left: 34px;
+}
+.rating-icon {
+  margin-right: 14px;
+}
+.rating-current {
+  font-size: 24px;
+  line-height: 150%;
+}
+.session {
+  display: flex;
+  justify-content: space-between; /*выравнивание элементов в блоке по ширине*/
+  align-items: start; /*Край поперечного начала края гибкого элемента выровнен с краем поперечного начала линии*/
+  margin-top: 62px;
+  padding-top: 46px;
+  padding-bottom: 63px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /*линия сверху блока, прозрачность 50%*/
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); /*линия снизу блока, прозрачность 50%*/
+}
+.session-label {
+  display: block; /*Элемент показывается как блочный. Применение этого значения для встроенных элементов, например тега <span>, заставляет его вести подобно блокам — происходит перенос строк в начале и в конце содержимого.(чтобы работали отступы)*/
+  margin-bottom: 20px;
+}
+.session-date-block {
+  display: flex;
+}
+.session-date-item {
+  cursor: pointer; /*при наведении курсор видоизменяется*/
+  display: flex;
+  flex-direction: column; /*расположение элементов в столбик (колонка)*/
+  border: 1px solid rgba(255, 255, 255, 0.5); /*цвет всех границ*/
+  border-radius: 5px; /*скругление углов*/
+  text-align: center; /*выравнивание текста по центру*/
+  width: 90px;
+  height: 90px;
+  align-items: center;
+  justify-content: center; /*выравнивание элементов в блоке по центру*/
+  margin-right: 15px;
+  transition: background-color 0.2s; /*временя изменения свойств (здесь заливки) при событии (псевдокласс)*/
+}
+.session-date-item:hover {
+  /*свойства элемента при наведении курсора (псевдокласс)*/
+  background-color: #fe8e05;
+  color: #621402;
+}
+.session-month {
+  font-size: 16px;
+  line-height: 19px;
+}
+.session-day {
+  font-weight: 900; /*жирность текста*/
+  font-size: 30px;
+  line-height: 35px;
+}
+.session-week {
+  font-size: 19px;
+  line-height: 22px;
+}
+.select {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  color: #fff;
+  padding: 18px; /*отступ*/
+  cursor: pointer; /*при наведении курсор видоизменяется*/
+  margin-top: 15px;
+}
+.select-cinema {
+  min-width: 470px;
+}
+.option {
+  background-color: #621402;
+}
